@@ -8,10 +8,10 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label x:Name="display" Grid.Row="0" Margin="20" Background="LightGray" Content="0" FontFamily="Consolas" FontSize="48"></Label>
+        <TextBlock x:Name="display" Grid.Row="0" Margin="20" Background="LightGray" Text="0" FontFamily="Consolas" FontSize="48" TextAlignment="Right"></TextBlock>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -29,10 +29,10 @@
             <Button x:Name="minus" Grid.Column="1" Grid.Row="0" Content="-" FontFamily="Consolas" FontSize="72" Click="minus_Click"></Button>
             <Button x:Name="multiply" Grid.Column="2" Grid.Row="0" Content="*" FontFamily="Consolas" FontSize="72" Click="multiply_Click"></Button>
             <Button x:Name="divide" Grid.Column="3" Grid.Row="0" Content="/" FontFamily="Consolas" FontSize="72" Click="divide_Click"></Button>
-            <Button x:Name="seven" Grid.Column="0" Grid.Row="1" Content="7" FontFamily="Consolas" FontSize="72"></Button>
-            <Button x:Name="eight" Grid.Column="1" Grid.Row="1" Content="8" FontFamily="Consolas" FontSize="72"></Button>
-            <Button x:Name="nine" Grid.Column="2" Grid.Row="1" Content="9" FontFamily="Consolas" FontSize="72"></Button>
-            <Button x:Name="clear" Grid.Column="3" Grid.Row="1" Content="C" FontFamily="Consolas" FontSize="72"></Button>
+            <Button x:Name="seven" Grid.Column="0" Grid.Row="1" Content="7" FontFamily="Consolas" FontSize="72" Click="seven_Click"></Button>
+            <Button x:Name="eight" Grid.Column="1" Grid.Row="1" Content="8" FontFamily="Consolas" FontSize="72" Click="eight_Click"></Button>
+            <Button x:Name="nine" Grid.Column="2" Grid.Row="1" Content="9" FontFamily="Consolas" FontSize="72" Click="nine_Click"></Button>
+            <Button x:Name="clear" Grid.Column="3" Grid.Row="1" Content="C" FontFamily="Consolas" FontSize="72" Click="clear_Click"></Button>
             <Button x:Name="four" Grid.Column="0" Grid.Row="2" Content="4" FontFamily="Consolas" FontSize="72" Click="four_Click"></Button>
             <Button x:Name="five" Grid.Column="1" Grid.Row="2" Content="5" FontFamily="Consolas" FontSize="72" Click="five_Click"></Button>
             <Button x:Name="six" Grid.Column="2" Grid.Row="2" Content="6" FontFamily="Consolas" FontSize="72" Click="six_Click"></Button>
@@ -42,5 +42,6 @@
             <Button x:Name="three" Grid.Column="2" Grid.Row="3" Content="3" FontFamily="Consolas" FontSize="72" Click="three_Click"></Button>
             <Button x:Name="zero" Grid.Column="3" Grid.Row="3" Content="0" FontFamily="Consolas" FontSize="72" Click="zero_Click"></Button>
         </Grid>
+        <TextBlock Name="memorydisplay" HorizontalAlignment="Right" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="760" TextAlignment="Right"/>
     </Grid>
 </Window>

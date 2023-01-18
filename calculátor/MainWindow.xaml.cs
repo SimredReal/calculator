@@ -20,11 +20,17 @@ namespace calculátor
     /// </summary>
     public partial class MainWindow : Window
     {
+        string number = "0";
+        string memory = null;
         public MainWindow()
         {
             InitializeComponent();
         }
-
+        private void clickedNumber(int input)
+        {
+            number = number == "0" ? input.ToString() : number + input.ToString();
+            updateDisplays();
+        }
         private void plus_Click(object sender, RoutedEventArgs e)
         {
 
@@ -45,44 +51,81 @@ namespace calculátor
 
         }
 
-        private void four_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void five_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void six_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
+        
         private void equals_Click(object sender, RoutedEventArgs e)
         {
 
         }
+        private void clear_Click(object sender, RoutedEventArgs e)
+        {
+            number = "0";
+            memory = null;
+            updateDisplays();
+        }
+        private void updateDisplays()
+        {
+            display.Text = number;
+            memorydisplay.Text = memory;
+        }
 
         private void one_Click(object sender, RoutedEventArgs e)
         {
+            clickedNumber(1);
 
         }
 
         private void two_Click(object sender, RoutedEventArgs e)
         {
+            clickedNumber(2);
 
         }
 
         private void three_Click(object sender, RoutedEventArgs e)
         {
+            clickedNumber(3);
 
         }
 
         private void zero_Click(object sender, RoutedEventArgs e)
         {
+            clickedNumber(0);
 
         }
+
+        private void seven_Click(object sender, RoutedEventArgs e)
+        {
+            clickedNumber(7);
+
+        }
+
+        private void eight_Click(object sender, RoutedEventArgs e)
+        {
+            clickedNumber(8);
+
+        }
+
+        private void nine_Click(object sender, RoutedEventArgs e)
+        {
+            clickedNumber(9);
+
+        }
+        private void four_Click(object sender, RoutedEventArgs e)
+        {
+            clickedNumber(4);
+        }
+
+        private void five_Click(object sender, RoutedEventArgs e)
+        {
+            clickedNumber(5);
+        }
+
+        private void six_Click(object sender, RoutedEventArgs e)
+        {
+            clickedNumber(6);
+
+        }
+
+
+        
     }
 }
