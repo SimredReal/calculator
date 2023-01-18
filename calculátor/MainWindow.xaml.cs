@@ -24,5 +24,65 @@ namespace calculátor
         {
             InitializeComponent();
         }
+
+        private void plus_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void minus_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void multiply_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void divide_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void four_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void five_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void six_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void equals_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void one_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void two_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void three_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void zero_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
