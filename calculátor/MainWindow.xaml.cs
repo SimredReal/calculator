@@ -21,7 +21,7 @@ namespace calculátor
     public partial class MainWindow : Window
     {
         string number = "0";
-        string memory = null;
+        int? memory = null;
         public MainWindow()
         {
             InitializeComponent();
@@ -65,7 +65,7 @@ namespace calculátor
         private void updateDisplays()
         {
             display.Text = number;
-            memorydisplay.Text = memory;
+            memorydisplay.Text = memory.ToString();
         }
 
         private void one_Click(object sender, RoutedEventArgs e)
