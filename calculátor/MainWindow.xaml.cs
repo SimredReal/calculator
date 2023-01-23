@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,51 +21,95 @@ namespace calculátor
     public partial class MainWindow : Window
     {
         string number = "0";
-        int? memory = null;
+        double? memory = null;
+        string op = null;
+        bool numberClicked = false;
         public MainWindow()
         {
             InitializeComponent();
         }
-        private void clickedNumber(int input)
+        private void clickedNumber(double input)
         {
             number = number == "0" ? input.ToString() : number + input.ToString();
             updateDisplays();
+            numberClicked = true;
         }
+        private void clickedOperator(string operation)
+        {
+            if (numberClicked == false && op != null)
+            {
+                op = operation;
+                updateDisplays();
+            }
+            else
+            {
+                if (op == null)
+                {
+                    memory = double.Parse(number);
+                    op = operation;
+                    number = "0";
+                    updateDisplays();
+                    numberClicked = false;
+                }
+                else
+                {
+                    numberClicked = false;
+                    handleEquals();
+                    clickedOperator(operation);
+                }
+            }
+        }
+
+        private void handleEquals()
+        {
+            if (memory == null) return;
+            if (number == "0" && op == "/") { MessageBox.Show("can't divide by zero"); return; }
+            switch (op)
+            {
+                case "+": number = (memory + double.Parse(number)).ToString(); break;
+                case "-": number = (memory - double.Parse(number)).ToString(); break;
+                case "*": number = (memory * double.Parse(number)).ToString(); break;
+                case "/": number = (memory / double.Parse(number)).ToString(); break;
+            }
+            op = null;
+            memory = null;
+            updateDisplays();
+        }
+        private void equals_Click(object sender, RoutedEventArgs e)
+        {
+            handleEquals();
+        }
+
         private void plus_Click(object sender, RoutedEventArgs e)
         {
-
+            clickedOperator("+");
         }
 
         private void minus_Click(object sender, RoutedEventArgs e)
         {
-
+            clickedOperator("-");
         }
 
         private void multiply_Click(object sender, RoutedEventArgs e)
         {
-
+            clickedOperator("*");
         }
 
         private void divide_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        
-        private void equals_Click(object sender, RoutedEventArgs e)
-        {
-
+            clickedOperator("/");
         }
         private void clear_Click(object sender, RoutedEventArgs e)
         {
             number = "0";
             memory = null;
+            op = null;
             updateDisplays();
         }
         private void updateDisplays()
         {
             display.Text = number;
-            memorydisplay.Text = memory.ToString();
+            memorydisplay.Text = memory.ToString() + " " + op;
         }
 
         private void one_Click(object sender, RoutedEventArgs e)
@@ -89,6 +133,7 @@ namespace calculátor
         private void zero_Click(object sender, RoutedEventArgs e)
         {
             clickedNumber(0);
+
 
         }
 
@@ -126,6 +171,6 @@ namespace calculátor
         }
 
 
-        
+
     }
 }
